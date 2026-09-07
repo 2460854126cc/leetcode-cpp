@@ -1,0 +1,20 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+int main() {
+    int num=9;
+    int a[]={2,7,11,15};
+    for (int i = 0; i < sizeof(a); ++i) {
+        for (int j = 0; j < sizeof(a); ++j) {
+            if (a[i]+a[j] == num) {
+                cout<<"[" << i << j<<"]"<<endl;
+                return 0;
+            }
+        }
+
+    }
+
+    return 0;
+}
+// Created by Administrator on 2026/9/7.
+//
