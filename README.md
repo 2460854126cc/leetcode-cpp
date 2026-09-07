@@ -8,10 +8,10 @@ using namespace std;
 vector<int> twoSum(vector<int>& nums, int target) {
     unordered_map<int, int> indexMap;
 
-    for (int i = 0; i < nums.size(); i++) {
+for (int i = 0; i < nums.size(); i++) {
         int need = target - nums[i];
 
-        auto it = indexMap.find(need);
+    auto it = indexMap.find(need);
 
         if (it != indexMap.end()) {
             return {it->second, i};
