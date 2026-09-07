@@ -1,36 +1,6 @@
 # leetcode-cpp
 1
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-using namespace std;
-
-vector<int> twoSum(vector<int>& nums, int target) {
-    unordered_map<int, int> indexMap;
-
-for (int i = 0; i < nums.size(); i++) {
-        int need = target - nums[i];
-
-    auto it = indexMap.find(need);
-
-        if (it != indexMap.end()) {
-            return {it->second, i};
-        }
-
-        indexMap[nums[i]] = i;
-    }
-
-    return {};
-}
-
-int main() {
-    vector<int> nums = {2, 7, 11, 15};
-    int target = 9;
-
-    vector<int> result = twoSum(nums, target);
-
-    cout << "[" << result[0] << ", "
-         << result[1] << "]" << endl;
-
-    return 0;
-}
+遍历到 nums[i] 时，计算需要的另一个数：need = target - nums[i]。
+在哈希表中查找 need。
+如果找到，返回两个元素的下标。
+如果没找到，将当前数及其下标保存到哈希表。
